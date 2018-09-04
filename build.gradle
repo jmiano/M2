@@ -8,7 +8,10 @@
 apply plugin: 'java'
 // end::use-plugin[]
 
+defaultTasks 'jar'
+
 //specify main class and class path
+// set this task as the default task
 jar {
     manifest {
         attributes ('Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain' ,
