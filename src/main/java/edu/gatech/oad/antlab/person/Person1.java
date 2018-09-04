@@ -33,18 +33,14 @@ public class Person1 {
 	    if (input == null || input.length() == 0) {
 	    	return input;
 		}
-		int length = 2 % (input.length());
-		reverse(input, 0, input.length() - 2 - 1);
-		reverse(input, input.length() - length, input.length() - 1);
-		reverse(input, 0, input.length() - 1);
-		return input;
-	}
-	private void reverse(String input, int start, int end) {
-		for (int i = start, j = end; i < j; i++, j--) {
-			String temp = input[j];
-			input[j] = input[i];
-			input[i] = temp;
+        String newstr = "";
+	    int rotationindex = 2 % input.length();
+	    for (int i = 0; i < input.length(); i++) {
+	    	newstr += input.charAt((i + rotationindex) % input.length());
 		}
+		return newstr;
+
+
 	}
 	/**
 	 * Return a string rep of this object
@@ -57,9 +53,16 @@ public class Person1 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
-
+	/**
+	 * the tester
+	 *
+	 * @param args the array
+	 *
+	 */
 	public static void main(String[]args) {
-		System.out.println(cal("ZhehengFan"));
+		Person1 niceperson = new Person1("ZhehengFan");
+		System.out.println(niceperson.calc("ZhehengFan"));
+		System.out.println(niceperson.calc(null));
 	}
 
 
