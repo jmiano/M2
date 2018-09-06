@@ -85,7 +85,7 @@ import edu.gatech.oad.antlab.pkg2.*;
     /**
      * entry point for the program
      * @param args an array of strings
-     * /
+     */
      public static void main(String[] args) {
 
         new AntLabMain().printOutMessage();
